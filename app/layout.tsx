@@ -1,3 +1,5 @@
+import { AppRouterCacheProvider } from "@mui/material-nextjs/v13-appRouter";
+
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
@@ -15,8 +17,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={inter.className}>{children}</body>
+    <html lang="en" className="h-full bg-white">
+      <body className={`h-full ${inter.className} bg-white`}>
+        {/*Custom cache (optional) the code snippet below shows how to change the CSS key to css (the
+        default is mui): */}
+        <AppRouterCacheProvider options={{ key: "css" }}>
+          {children}
+        </AppRouterCacheProvider>
+      </body>
     </html>
   );
 }
