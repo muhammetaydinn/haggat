@@ -1,9 +1,11 @@
 "use client"; // Bunu ekleyerek bileşeni Client Component yapıyoruz
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 import { useState, useEffect } from "react";
 
 export default function Home() {
   const [isWide, setIsWide] = useState(false);
+    const router = useRouter();
 
   useEffect(() => {
     // Ekran genişliğini kontrol eden bir fonksiyon
@@ -55,7 +57,13 @@ export default function Home() {
             placeholder="Ara..."
             className="ml-5 p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-indigo-600"
           />
-          <button className="ml-5 p-2 bg-indigo-600 text-white rounded hover:bg-indigo-700">
+          <button
+            onClick={
+              () => {
+               router.push("/login")
+              }
+            }
+            className="ml-5 p-2 bg-indigo-600 text-white rounded hover:bg-indigo-700">
             Giriş Yap
           </button>
         </div>
