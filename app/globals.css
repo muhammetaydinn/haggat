@@ -29,3 +29,6 @@ body {
     text-wrap: balance;
   }
 }
+.swiper-pagination-bullet-active {
+  background-color: #000 !important;
+}
