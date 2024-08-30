@@ -3,6 +3,9 @@ import { AppRouterCacheProvider } from "@mui/material-nextjs/v13-appRouter";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import Footer from "@/components/Footer";
+import { MantineProvider } from "@mantine/core";
+import Header from "@/components/Header";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -23,7 +26,11 @@ export default function RootLayout({
         {/*Custom cache (optional) the code snippet below shows how to change the CSS key to css (the
         default is mui): */}
         <AppRouterCacheProvider options={{ key: "css" }}>
-          {children}
+          <MantineProvider defaultColorScheme="light">
+            <Header />
+            {children}
+            <Footer />
+          </MantineProvider>
         </AppRouterCacheProvider>
       </body>
     </html>
