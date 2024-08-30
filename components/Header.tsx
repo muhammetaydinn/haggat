@@ -30,7 +30,7 @@ const Header = () => {
         />
       </div>
 
-      <div className="flex items-center gap-10  ">
+      <div className="flex items-center gap-10 mr-5 ">
         <p>
           <Link
             className={`p-3 ${pathname === "/store" ? "underline" : ""}`}
