@@ -6,6 +6,7 @@ import "./globals.css";
 import Footer from "@/components/Footer";
 import { MantineProvider } from "@mantine/core";
 import Header from "@/components/Header";
+import Providers from "@/components/Providers";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -25,13 +26,15 @@ export default function RootLayout({
       <body className={`h-full ${inter.className} bg-white`}>
         {/*Custom cache (optional) the code snippet below shows how to change the CSS key to css (the
         default is mui): */}
-        <AppRouterCacheProvider options={{ key: "css" }}>
-          <MantineProvider defaultColorScheme="light">
-            <Header />
-            {children}
-            <Footer />
-          </MantineProvider>
-        </AppRouterCacheProvider>
+        <Providers>
+          <AppRouterCacheProvider options={{ key: "css" }}>
+            <MantineProvider defaultColorScheme="light">
+              <Header />
+              {children}
+              <Footer />
+            </MantineProvider>
+          </AppRouterCacheProvider>
+        </Providers>
       </body>
     </html>
   );
