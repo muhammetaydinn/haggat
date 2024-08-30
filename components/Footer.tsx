@@ -3,7 +3,7 @@ import { IconBrandGithub } from "@tabler/icons-react";
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-100 pb-4 mt-2">
+    <footer className="bg-gray-100 pb-4 pl-4 pr-4 mt-2">
       {/* Divider */}
       <div className="h-px bg-gray-300 my-4"></div>
 

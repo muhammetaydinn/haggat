@@ -34,7 +34,7 @@ const Header = () => {
           <Link
             className={`p-3 ${pathname === "/store" ? "underline" : ""}`}
             href="/store"
-          ></Link>
+          >store</Link>
         </p>
         <p>
           <Link
