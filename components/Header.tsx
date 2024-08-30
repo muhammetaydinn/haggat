@@ -6,10 +6,9 @@ import { LogInButton } from "./LogInButton";
 import { Group } from "@mantine/core";
 
 const Header = () => {
-  const router = useRouter();
   const pathname = usePathname();
   return (
-    <div className="flex justify-between items-center text-black ml-5 p-5">
+    <div className="flex justify-between items-center text-black ml-5 mr-5 p-5">
       <div className="hidden sm:block">
         <img
           src="/logo.svg"
@@ -31,7 +30,7 @@ const Header = () => {
         />
       </div>
 
-      <div className="flex items-center gap-24 mr-5 ">
+      <div className="flex items-center gap-10  ">
         <p>
           <Link
             className={`p-3 ${pathname === "/store" ? "underline" : ""}`}
@@ -48,7 +47,7 @@ const Header = () => {
             home
           </Link>
         </p>
-        <Group visibleFrom="sm">
+        <Group >
           <LogInButton />
           {/* {!session?.user?.email && <Button>Sign up</Button>} */}
         </Group>
