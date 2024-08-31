@@ -3,10 +3,15 @@ import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import React from "react";
 import { LogInButton } from "./LogInButton";
-import { Group } from "@mantine/core";
+import { Badge, Box, Center, Group, rem, useMantineTheme } from "@mantine/core";
+import { IconShoppingCart } from "@tabler/icons-react";
+import { useCartStore } from "@/store/cart";
 
 const Header = () => {
+  const theme = useMantineTheme();
   const pathname = usePathname();
+  const { cart } = useCartStore();
+  const totalQuantity = cart.reduce((total, item) => total + item.quantity, 0);
   return (
     <div className="flex justify-between items-center text-black ml-5 mr-5 p-5">
       <div className="hidden sm:block">
@@ -49,10 +54,36 @@ const Header = () => {
             home
           </Link>
         </p>
-        <Group>
+          <Link
+            href="/cart"
+            className="p-3
+          "
+          >
+            <Center inline>
+              <Box component="span" mr={5}>
+                Cart
+              </Box>
+              <IconShoppingCart
+                style={{ width: rem(16), height: rem(16) }}
+                color="black"
+              />
+              {totalQuantity > 0 && (
+                <Badge
+                  size="xs"
+                  circle
+                  style={{
+                    backgroundColor: theme.colors.red[6],
+                    transform: "translate(-2px,-8px)",
+                    minWidth: "fit-content",
+                  }}
+                >
+                  {totalQuantity}
+                </Badge>
+              )}
+            </Center>
+          </Link>
           <LogInButton />
           {/* {!session?.user?.email && <Button>Sign up</Button>} */}
-        </Group>
         {/* <button
           onClick={() => {
             router.push("/login");
