@@ -1,4 +1,5 @@
 "use client";
+import CategoryCarousel from "@/components/CagegoryCarousel";
 import HomeCarousel from "@/components/HomeCarousel";
 import {
   fetchAllCategories,
@@ -16,6 +17,7 @@ export default async function Home() {
       {/* Ana İçerik */}
       <main className="p-5">
         <HomeCarousel initialData={initialData} />
+        <CategoryCarousel initialCategoriesData={initialCategoriesData} />
       </main>
     </div>
   );

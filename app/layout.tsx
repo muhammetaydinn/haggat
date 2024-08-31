@@ -7,6 +7,7 @@ import Footer from "@/components/Footer";
 import { MantineProvider } from "@mantine/core";
 import Header from "@/components/Header";
 import Providers from "@/components/Providers";
+import { ReactQueryProvider } from "@/components/ReactQueryProvider";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -27,13 +28,15 @@ export default function RootLayout({
         {/*Custom cache (optional) the code snippet below shows how to change the CSS key to css (the
         default is mui): */}
         <Providers>
-          <AppRouterCacheProvider options={{ key: "css" }}>
-            <MantineProvider defaultColorScheme="light">
-              <Header />
-              {children}
-              <Footer />
-            </MantineProvider>
-          </AppRouterCacheProvider>
+          <ReactQueryProvider>
+            <AppRouterCacheProvider options={{ key: "css" }}>
+              <MantineProvider defaultColorScheme="light">
+                <Header />
+                {children}
+                <Footer />
+              </MantineProvider>
+            </AppRouterCacheProvider>
+          </ReactQueryProvider>
         </Providers>
       </body>
     </html>

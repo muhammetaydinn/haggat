@@ -39,4 +39,5 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 - https://mui.com/material-ui/integrations/nextjs/
 - https://tailwindui.com/documentation
 - maybe mantine?
-  
+
+TODO: SEPERATE CLIENT(NO ASYNC AND AWAITS) AND SERVER SIDE CODE 
