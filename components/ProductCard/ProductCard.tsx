@@ -1,19 +1,12 @@
 import { IProduct } from "@/models/product.model";
-import { useCartStore } from "@/store/cart";
 import { Carousel } from "@mantine/carousel";
 import {
-  ActionIcon,
-  Button,
   Card,
   Group,
   Image,
-  rem,
-  Text,
-  useMantineTheme,
+  Text
 } from "@mantine/core";
-import { IconShoppingCart, IconStar } from "@tabler/icons-react";
 import { useRouter } from "next/navigation";
-import { useState } from "react";
 import classes from "./ProductCard.module.css";
 
 const ProductCard = ({
@@ -25,44 +18,6 @@ const ProductCard = ({
   category,
 }: IProduct) => {
   const router = useRouter();
-  const theme = useMantineTheme();
-  const { addToCart, cart, updateCartItemQuantity } = useCartStore();
-  const productInCart = cart.find((item) => item.product.id === id);
-  const [quantity, setQuantity] = useState(
-    productInCart ? productInCart.quantity : 0
-  );
-
-  const handleIncrement = () => {
-    // TODO:ADD toast.success("You successfully added product to your cart.");
-    const updatedQuantity = quantity + 1;
-    setQuantity(updatedQuantity);
-
-    if (productInCart) {
-      updateCartItemQuantity(id, updatedQuantity);
-    } else {
-      addToCart({
-        id: id,
-        title: title,
-        price: price,
-        description: description,
-        images: images,
-        category: category,
-        creationAt: "",
-        updatedAt: "",
-      });
-    }
-  };
-
-  const handleDecrement = () => {
-    if (quantity > 0) {
-      const updatedQuantity = quantity - 1;
-      setQuantity(updatedQuantity);
-
-      if (productInCart) {
-        updateCartItemQuantity(id, updatedQuantity);
-      }
-    }
-  };
 
   const slides = images?.map((image) => (
     <Carousel.Slide key={image}>
