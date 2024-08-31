@@ -1,10 +1,8 @@
-"use client";
-import CategoryCarousel from "@/components/CagegoryCarousel";
+import CategoriesCarousel from "@/components/CategoriesCarousel/CategoriesCarousel";
 import HomeCarousel from "@/components/HomeCarousel";
 import {
   fetchAllCategories,
   fetchHomeCarouselProducts,
-  fetchProductsByCategoryId,
 } from "@/services";
 
 // Bunu ekleyerek bileşeni Client Component yapıyoruz
@@ -17,7 +15,8 @@ export default async function Home() {
       {/* Ana İçerik */}
       <main className="p-5">
         <HomeCarousel initialData={initialData} />
-        <CategoryCarousel initialCategoriesData={initialCategoriesData} />
+        <h2 className="text-2xl font-bold mt-10">Categories</h2>
+        <CategoriesCarousel initialCategoriesData={initialCategoriesData} />
       </main>
     </div>
   );

@@ -1,5 +1,6 @@
 import { AppRouterCacheProvider } from "@mui/material-nextjs/v13-appRouter";
-
+import "@mantine/core/styles.css";
+import "@mantine/carousel/styles.css";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
@@ -24,7 +25,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="h-full bg-white">
       <link rel="shortcut icon" href="/haggat_favicon.svg" />
-      <body className={`h-full ${inter.className} bg-white`}>
+      <body className={`h-full ${inter.className} bg-whit text-black`}>
         {/*Custom cache (optional) the code snippet below shows how to change the CSS key to css (the
         default is mui): */}
         <Providers>
