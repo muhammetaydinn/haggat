@@ -73,7 +73,7 @@ const ProductCard = ({
   return (
     <Card
       className="hover:shadow-2xl hover:shadow-gray-800/90  transition-shadow duration-300 ease-in-out"
-      onClick={() => router.push(`/products/${id}`)}
+      onClick={() => router.push(`/product/${id}`)}
       radius="md"
       withBorder
       padding="xl"
