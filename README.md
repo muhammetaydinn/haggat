@@ -41,3 +41,6 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 - maybe mantine?
 
 https://ui.mantine.dev/
+TODO: WRITE ORDERBY CODE MANUALLY API DONT HAVE IT
+TOOD: ADD TOGGLE FEATURE CATEGORIES ON MOBILE
+TODO: home loading skeleton

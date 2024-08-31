@@ -33,21 +33,23 @@ const Header = () => {
       <div className="flex items-center gap-10 mr-5 ">
         <p>
           <Link
-            className={`p-3 ${pathname === "/store" ? "underline" : ""}`}
-            href="/store"
+            className={`p-3 ${
+              pathname === "/products" ? "underline font-bold" : ""
+            }`}
+            href="/products"
           >
             store
           </Link>
         </p>
         <p>
           <Link
-            className={`p-3 ${pathname === "/" ? "underline" : ""}`}
+            className={`p-3 ${pathname === "/" ? "underline font-bold" : ""}`}
             href="/"
           >
             home
           </Link>
         </p>
-        <Group >
+        <Group>
           <LogInButton />
           {/* {!session?.user?.email && <Button>Sign up</Button>} */}
         </Group>

@@ -1,6 +1,7 @@
 import useGetProducts from "@/hooks/useGetProducts";
 import { Container, Skeleton, Text } from "@mantine/core";
 import React from "react";
+import ProductCard from "../ProductCard/ProductCard";
 interface IProductsContainerProps {
   filterParams: Record<string, string>;
 }
@@ -21,7 +22,7 @@ const ProductsContainer = ({ filterParams }: IProductsContainerProps) => {
     >
       {Array.isArray(productsData) && productsData.length > 0 ? (
         productsData?.map((item) => {
-            return <a>{item.title}</a>
+          return <ProductCard {...item} key={item.id} />;
         })
       ) : (
         <Text
