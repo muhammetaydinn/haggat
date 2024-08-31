@@ -40,4 +40,4 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 - https://tailwindui.com/documentation
 - maybe mantine?
 
-TODO: SEPERATE CLIENT(NO ASYNC AND AWAITS) AND SERVER SIDE CODE 
+https://ui.mantine.dev/
