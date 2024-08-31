@@ -1,8 +1,8 @@
-import { Paper, Text, Title, Button } from "@mantine/core";
+import { Paper, Text, Title, Button } from '@mantine/core';
 
-import classes from "./CategoryCard.module.css";
-import { useRouter } from "next/navigation";
-import { useCartStore } from "@/store/cart";
+import classes from './CategoryCard.module.css';
+import { useRouter } from 'next/navigation';
+import { useCartStore } from '@/store/cart';
 
 interface CardProps {
   image: string;
@@ -36,7 +36,7 @@ export function CategoryCard({ image, name, id }: CardProps) {
         variant="white"
         color="dark"
         onClick={() => {
-          router.push("/products");
+          router.push('/products');
           handleCategoryChange(id);
         }}
       >

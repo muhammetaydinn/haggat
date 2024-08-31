@@ -1,4 +1,4 @@
-import { ICategory } from '@/models/category.model';
+'use client';
 import { IProduct } from '@/models/product.model';
 import React from 'react'
 import { Pagination,Navigation } from "swiper/modules";

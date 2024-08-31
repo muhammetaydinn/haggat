@@ -1,10 +1,7 @@
 import CategoriesCarousel from "@/components/CategoriesCarousel/CategoriesCarousel";
 import HomeCarousel from "@/components/HomeCarousel";
-import {
-  fetchAllCategories,
-  fetchHomeCarouselProducts,
-} from "@/services";
-
+import { fetchAllCategories, fetchHomeCarouselProducts } from "@/services";
+import { Container, Text } from "@mantine/core";
 // Bunu ekleyerek bileşeni Client Component yapıyoruz
 
 export default async function Home() {
@@ -15,8 +12,21 @@ export default async function Home() {
       {/* Ana İçerik */}
       <main className="p-5">
         <HomeCarousel initialData={initialData} />
-        <h2 className="text-2xl font-bold mt-10">Categories</h2>
-        <CategoriesCarousel initialCategoriesData={initialCategoriesData} />
+        <Text
+          style={{
+            textAlign: "start",
+            fontWeight: "bold",
+            fontSize: "2rem",
+          }}
+          size="xl"
+          mt={"2rem"}
+          mb={"2rem"}
+        >
+          Categories
+        </Text>
+        <Container size="" mt={"2rem"} mb={"2rem"}>
+          <CategoriesCarousel initialCategoriesData={initialCategoriesData} />
+        </Container>
       </main>
     </div>
   );
