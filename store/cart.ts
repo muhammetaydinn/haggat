@@ -14,6 +14,7 @@ type CartStore = {
   updateCartItemQuantity: (productId: number, quantity: number) => void;
   selectedCategoryId: number;
   setSelectedCategoryId: (categoryId: number) => void;
+  clearCart: () => void;
 };
 
 const initialState: CartStore = {
@@ -23,6 +24,7 @@ const initialState: CartStore = {
   removeFromCart: () => {},
   updateCartItemQuantity: () => {},
   setSelectedCategoryId: () => {},
+  clearCart: () => {},
 };
 
 export const useCartStore = create<CartStore>()(
@@ -52,6 +54,9 @@ export const useCartStore = create<CartStore>()(
             );
             return { cart: updatedCart };
           });
+        },
+        clearCart: () => {
+          set({ cart: [] });
         },
         updateCartItemQuantity: (productId, quantity) => {
           set((state) => {
