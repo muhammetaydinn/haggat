@@ -31,7 +31,7 @@ export default function RootLayout({
         <Providers>
           <ReactQueryProvider>
             <AppRouterCacheProvider options={{ key: "css" }}>
-              <MantineProvider defaultColorScheme="light">
+              <MantineProvider forceColorScheme="light">
                 <Header />
                 {children}
                 <Footer />
