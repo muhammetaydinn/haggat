@@ -124,7 +124,7 @@ const CartPage = () => {
                   <Text size="xl">{`$${fee}`}</Text>
                 </Flex>
 
-                {totalCartCost > 100 ? (
+                {totalCartCost >= 100 ? (
                   <Flex justify="space-between">
                     <Text size="xl">
                       Free Shipping for $100 and Above (Seller Will Cover)
@@ -143,7 +143,7 @@ const CartPage = () => {
               <Flex justify="space-between">
                 <Text size="xl">Total:</Text>
                 <Text size="xl" className="text-green-500">
-                  {totalCartCost > 100
+                  {totalCartCost >=100 
                     ? `$${totalCartCost}`
                     : `$${totalCartCost + fee}`}
                 </Text>
