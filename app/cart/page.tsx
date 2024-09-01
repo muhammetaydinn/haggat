@@ -11,9 +11,11 @@ import {
   Flex,
   Divider,
 } from "@mantine/core";
+import { useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
 const fee = 14.99;
 const CartPage = () => {
+  const { data: session } = useSession();
   const router = useRouter();
   const cart = useCartStore((state) => state.cart);
   const removeFromCart = useCartStore((state) => state.removeFromCart);
@@ -143,7 +145,7 @@ const CartPage = () => {
               <Flex justify="space-between">
                 <Text size="xl">Total:</Text>
                 <Text size="xl" className="text-green-500">
-                  {totalCartCost >=100 
+                  {totalCartCost >= 100
                     ? `$${totalCartCost}`
                     : `$${totalCartCost + fee}`}
                 </Text>
@@ -154,7 +156,15 @@ const CartPage = () => {
                   className="hover:bg-green-600 duration-300 ease-in-out"
                   color="black"
                   style={{ marginTop: "16px", width: "100%" }}
-                  onClick={() => router.push("/payment")}
+                  onClick={() => {
+                    if (session?.user) {
+                      router.push("/payment-success");
+                      // clear cart
+                      useCartStore.getState().clearCart();
+                    } else {
+                      alert("Please login to checkout");
+                    }
+                  }}
                 >
                   Checkout
                 </Button>
