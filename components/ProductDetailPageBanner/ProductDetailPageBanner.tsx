@@ -27,7 +27,11 @@ export function ProductDetailPageBanner({ productDetailData }: ProductDetailPage
 
   const slides = productDetailData?.images?.map((image) => (
     <Carousel.Slide key={image}>
-      <Image src={image} height={220} />
+      <Image
+        src={image}
+        height={220}
+        fallbackSrc="https://placehold.co/220?text=Placeholder"
+      />
     </Carousel.Slide>
   ));
 
