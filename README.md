@@ -4,6 +4,10 @@ Welcome to the Haggat e-commerce project! This is a simple e-commerce site built
 
 Go to the [Live Demo](https://haggat.vercel.app/)
 
+### Access the Application
+
+You can access the application at <http://localhost:3000>.
+
 ## Core Features
 
 ### Homepage
@@ -47,6 +51,9 @@ Go to the [Live Demo](https://haggat.vercel.app/)
 
 ## Getting Started
 
+If you wanto run it locally manual, follow the instructions below.
+Or you can use the docker image to run it in a container.
+
 ### Prerequisites
 
 - Node.js
@@ -75,7 +82,41 @@ Go to the [Live Demo](https://haggat.vercel.app/)
    npm run dev
 ```
 
+# Haggat Docker
+
+This project provides a Docker image for a [Next.js](https://nextjs.org/) web application.
+
+## Features
+
+- Next.js application
+- Runs on port 3000
+
+## Requirements
+
+- Docker: [Docker](https://www.docker.com/get-started) must be installed.
+
+## Installation
+
+You can pull and run the Docker image from [Docker Hub](https://hub.docker.com/).
+
+### Pull the Docker Image
+
+To download the image, run the following command:
+
+```bash
+docker pull muhammetaydin/haggat-docker:latest
+```
+
+### Run the Docker Image
+
+To run the image, use this command:
+
+```bash
+docker run -p 3000:3000 muhammetaydin/haggat-docker:latest
+```
+
 ## Contact
+
 If you have any questions or need further assistance, feel free to contact us.
 
 Good luck with the project!
