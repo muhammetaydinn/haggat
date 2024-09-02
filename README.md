@@ -1,48 +1,81 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Haggat - Simple E-Commerce Site
+
+Welcome to the Haggat e-commerce project! This is a simple e-commerce site built with Next.js and React, featuring core functionalities such as product listings, cart management, and user sessions. Below you'll find details on how to set up and run the project, as well as an overview of the core features and technological specifications.
+
+Go to the [Live Demo](https://haggat.vercel.app/)
+
+## Core Features
+
+### Homepage
+
+- **Slider**: Displays popular products using a carousel component (e.g., Embla Carousel).
+- **Categories**: Cards showcasing various product categories.
+
+### Product Listing
+
+- **Filter & Sort**: Users can filter products by categories and perform sorting operations.
+- **Server-Side Rendering (SSR)**: Used for listing products to ensure up-to-date content.
+
+### Product Details
+
+- **Product Features**: Detailed view of product features.
+- **Image Carousel**: Carousel for products with multiple images.
+- **Add to Cart**: Option to add products to the cart.
+
+### Cart Management
+
+- **View & Manage**: Users can view and manage their cart.
+- **Persistence**: Cart items persist across page refreshes.
+
+### User Session
+
+- **Authentication**: Users can log in using NextAuth for session management.
+
+## Technological Specifications
+
+- **Frontend**:
+  - Next.js ( Next 14)
+  - React
+  - CSS-in-JS (e.g., styled-components)
+  - UI Framework (e.g., Mantine)
+
+- **Backend**:
+  - Fake API provided by [fakeapi.platzi.com](https://fakeapi.platzi.com)
+
+- **Session Management**:
+  - NextAuth
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
+
+- Node.js
+- npm or yarn
+
+### Installation
+
+1. **Clone the Repository**:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+    git clone [repository-url]
+    cd haggat
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. **Install Dependencies**:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+   git clone [repository-url]
+   cd haggat
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+3. Configure Environment Variables: Look at to the Create a .env.local file in the root directory and add the necessary environment variables. Refer to the .env.example for a template.
+4. Run the Development Server:
 
-## Learn More
+```bash
+   npm run dev
+```
 
-To learn more about Next.js, take a look at the following resources:
+## Contact
+If you have any questions or need further assistance, feel free to contact us.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
-
-### Installed Packages
-- https://mui.com/material-ui/integrations/nextjs/
-- https://tailwindui.com/documentation
-- maybe mantine?
-
-https://ui.mantine.dev/
-TODO: WRITE ORDERBY CODE MANUALLY API DONT HAVE IT
-TOOD: ADD TOGGLE FEATURE CATEGORIES ON MOBILE
-TODO: home loading skeleton
-TODO: ADD RANDOM RATE TO PRODUCTS
-TODO: UPDATE AUTH COLOR SCHEME
+Good luck with the project!
