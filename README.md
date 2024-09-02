@@ -64,7 +64,7 @@ Or you can use the docker image to run it in a container.
 1. **Clone the Repository**:
 
 ```bash
-    git clone [repository-url]
+    git clone https://github.com/muhammetaydinn/haggat.git
     cd haggat
 ```
 
