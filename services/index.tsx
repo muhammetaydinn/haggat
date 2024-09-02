@@ -1,7 +1,8 @@
+import { fixImagesFormat } from "@/utils/imagesFormatter/imgF";
 import queryMaker from "@/utils/queryMaker";
 import axios from "axios";
 //if you are use your local platzi api, you can change the value of isAPI to false
-const isAPI = false;
+const isAPI = true;
 const API_URL = isAPI
   ? "https://api.escuelajs.co/api/v1"
   : "http://localhost:3001/api/v1";
@@ -22,7 +23,14 @@ export const fetchProductsByCategoryId = async (categoryId: number) => {
 // Function to fetch specific product by ID
 export const fetchProductById = async (productId: string) => {
   const response = await axios.get(`${API_URL}/products/${productId}`);
-  return response.data;
+   const products = response.data.map((product: any) => {
+     if (Array.isArray(product.images) && product.images.length > 0) {
+       product.images = fixImagesFormat(product.images);
+     }
+     return product;
+   });
+
+  return products;
 };
 
 // Function to fetch products
@@ -30,10 +38,30 @@ export const fetchProducts = async (filterParams: Record<string, string>) => {
   const response = await axios.get(
     `${API_URL}/products/` + queryMaker(filterParams)
   );
-  return response.data;
+  //tam burada eğer images listesi string listesi yerine su sekilde geliyorsa çöz
+  /*     "images": [
+            "[\"https://i.imgur.com/TF0pXdL.jpg\"",
+            "\"https://i.imgur.com/BLDByXP.jpg\"",
+            "\"https://i.imgur.com/b7trwCv.jpg\"]"
+        ],
+  */
+    const products = response.data.map((product: any) => {
+      if (Array.isArray(product.images) && product.images.length > 0) {
+        product.images = fixImagesFormat(product.images);
+      }
+      return product;
+    });
+
+  return products;
 };
 
 export const fetchHomeCarouselProducts = async () => {
   const response = await axios.get(`${API_URL}/products/?offset=10&limit=6`);
-  return response.data;
+     const products = response.data.map((product: any) => {
+       if (Array.isArray(product.images) && product.images.length > 0) {
+         product.images = fixImagesFormat(product.images);
+       }
+       return product;
+     });
+  return products;
 };
