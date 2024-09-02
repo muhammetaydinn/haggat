@@ -9,7 +9,7 @@ export default function Page({ params }: { params: { id: string } }) {
     params.id
   );
   const router = useRouter();
- 
+
   if (isFetching) {
     return (
       <Container size={"lg"}>
@@ -27,7 +27,7 @@ export default function Page({ params }: { params: { id: string } }) {
           variant="gradient"
           gradient={{ from: "blue", to: "cyan", deg: 0 }}
         >
-          PRRODUCT NOT FOUND
+          PRODUCT NOT FOUND {error ? `: ${error.message}` : ""}
         </Text>
         <Button type="button" onClick={() => router.push("/")} mt={"lg"}>
           Back to Home Page

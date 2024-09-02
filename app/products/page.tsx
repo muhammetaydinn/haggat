@@ -3,7 +3,7 @@
 import CategoriesTab from "@/components/CategoriesTab/CategoriesTab";
 import ProductsContainer from "@/components/ProductsContainer/ProductsContainer";
 import { useCartStore } from "@/store/cart";
-import { Container, Grid } from "@mantine/core";
+import { Container, Grid, Space } from "@mantine/core";
 import { useEffect, useState } from "react";
 
 export default function Page() {
@@ -18,6 +18,7 @@ export default function Page() {
 
   return (
     <Container size={"xl"} m={"auto"}>
+      <Space h={20} />
       <Grid>
         <Grid.Col span={{ base: 12, sm: 3 }}>
           <CategoriesTab
