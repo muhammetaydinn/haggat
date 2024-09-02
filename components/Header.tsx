@@ -13,47 +13,48 @@ const Header = () => {
   const { cart } = useCartStore();
   const totalQuantity = cart.reduce((total, item) => total + item.quantity, 0);
   return (
-    <div className="flex justify-between items-center text-black ml-5 mr-5 p-5">
-      <div className="hidden sm:block">
-        <img
-          src="/logo.svg"
-          alt="Large Logo"
-          className="max-w-full h-8 min-w-16"
-          width={100}
-          height={"auto"}
-        />
-      </div>
+    <div className="shadow-lg  sticky z-10 ">
+      <div className="flex justify-between items-center text-black ml-5 mr-5 p-5">
+        <div className="hidden sm:block">
+          <img
+            src="/logo.svg"
+            alt="Large Logo"
+            className="max-w-full h-8 min-w-16"
+            width={100}
+            height={"auto"}
+          />
+        </div>
 
-      {/* Small logo, shown when screen width is less than 400px */}
-      <div className="block sm:hidden">
-        <img
-          src="/logosmall.svg"
-          alt="Small Logo"
-          className="max-w-full h-8 min-w-8"
-          width={50}
-          height={"auto"}
-        />
-      </div>
+        {/* Small logo, shown when screen width is less than 400px */}
+        <div className="block sm:hidden">
+          <img
+            src="/logosmall.svg"
+            alt="Small Logo"
+            className="max-w-full h-8 min-w-8"
+            width={50}
+            height={"auto"}
+          />
+        </div>
 
-      <div className="flex items-center gap-10 mr-5 ">
-        <p>
-          <Link
-            className={`p-3 ${
-              pathname === "/products" ? "underline font-bold" : ""
-            }`}
-            href="/products"
-          >
-            store
-          </Link>
-        </p>
-        <p>
-          <Link
-            className={`p-3 ${pathname === "/" ? "underline font-bold" : ""}`}
-            href="/"
-          >
-            home
-          </Link>
-        </p>
+        <div className="flex items-center gap-10 mr-5 ">
+          <p>
+            <Link
+              className={`p-3 ${
+                pathname === "/products" ? "underline font-bold" : ""
+              }`}
+              href="/products"
+            >
+              store
+            </Link>
+          </p>
+          <p>
+            <Link
+              className={`p-3 ${pathname === "/" ? "underline font-bold" : ""}`}
+              href="/"
+            >
+              home
+            </Link>
+          </p>
           <Link
             href="/cart"
             className="p-3
@@ -84,7 +85,7 @@ const Header = () => {
           </Link>
           <LogInButton />
           {/* {!session?.user?.email && <Button>Sign up</Button>} */}
-        {/* <button
+          {/* <button
           onClick={() => {
             router.push("/login");
           }}
@@ -92,6 +93,7 @@ const Header = () => {
         >
           giris yap
         </button> */}
+        </div>
       </div>
     </div>
   );

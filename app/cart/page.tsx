@@ -10,6 +10,7 @@ import {
   Grid,
   Flex,
   Divider,
+  Space,
 } from "@mantine/core";
 import { useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
@@ -37,8 +38,10 @@ const CartPage = () => {
   );
 
   return (
-    <div className="flex flex-col md:flex-row">
+    <div className="flex flex-col md:flex-row h-full">
       <div className="w-full md:w-8/12">
+        <Space h={40} />
+
         <Container>
           <h1>Shopping Cart</h1>
           {cart.length === 0 ? (
@@ -112,6 +115,7 @@ const CartPage = () => {
 
       <div className="w-full md:w-4/12">
         <Container>
+          <Space h={40} />
           {cart.length < 1 ? null : (
             <Paper style={{ backgroundColor: "white" }} shadow="xs" p="xl">
               <h1>Order Summary</h1>

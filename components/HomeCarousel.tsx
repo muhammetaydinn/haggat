@@ -21,7 +21,7 @@ const HomeCarousel = ({ initialData }: ICardsCarouselProps) => {
       <div
         style={{
           width: "calc(100% - 5vw)", // Ekran genişliğinin %5'i kadar çıkar
-          height: "calc(100% - 30vh)", // Ekran yüksekliğinin %20'si kadar çıkar
+          height: "calc(100% - 50vh)", // Ekran yüksekliğinin %20'si kadar çıkar
         }}
       >
         <Swiper
