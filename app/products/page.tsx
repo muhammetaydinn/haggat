@@ -2,6 +2,7 @@
 
 import CategoriesTab from "@/components/CategoriesTab/CategoriesTab";
 import ProductsContainer from "@/components/ProductsContainer/ProductsContainer";
+import SelectOrderBy from "@/components/SelectOrderBy/SelectOrderBy";
 import { useCartStore } from "@/store/cart";
 import { Container, Grid, Space } from "@mantine/core";
 import { useEffect, useState } from "react";
@@ -28,6 +29,8 @@ export default function Page() {
           />
         </Grid.Col>
         <Grid.Col span={{ base: 12, sm: 9 }}>
+          <SelectOrderBy></SelectOrderBy> 
+          <Space h={20} />
           <ProductsContainer filterParams={filterParams} />
         </Grid.Col>
       </Grid>
