@@ -9,25 +9,32 @@ export function LogInButton() {
 
   if (session?.user) {
     return (
-      <Menu width={200} position="bottom-end" withArrow>
+      <Menu position="bottom-end" withArrow>
         <Menu.Target>
           <Button
             // color black
             color="dark"
             variant="subtle"
-            style={{ display: "flex", alignItems: "stretch" }}
+            style={{
+              display: "flex",
+
+              alignItems: "flex-start",
+              maxWidth: "100%",
+              textOverflow: "ellipsis",
+              overflow: "hidden",
+            }}
           >
             <Avatar
               color="black"
               src={session.user.image || ""}
               radius="lg"
               size="md"
-              style={{ marginRight: "0.5rem", padding: "3px" }}
+              style={{  padding: "3px" }}
             />
-            <Text>{session.user.name || session.user.email}</Text>
           </Button>
         </Menu.Target>
         <Menu.Dropdown>
+          <Menu.Item disabled>Profile:{session.user.name}</Menu.Item>
           <Menu.Item>{session.user.email}</Menu.Item>
           <Menu.Item color="red" onClick={() => signOut()}>
             Sign out

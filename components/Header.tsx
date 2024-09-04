@@ -15,7 +15,7 @@ const Header = () => {
 
   return (
     <div className="shadow-lg sticky top-0 z-10 bg-white">
-      <div className="container mx-auto flex justify-between items-center p-5">
+      <div className="container  flex justify-between items-center p-5">
         {/* Logo with Link */}
         <Link href="/" className="flex-shrink-0">
           <img
@@ -77,7 +77,9 @@ const Header = () => {
         </div>
 
         {/* User Button */}
-        <div className="flex-shrink-0">
+        <div
+          className="flex items-center gap-5"
+        >
           <LogInButton />
         </div>
       </div>
