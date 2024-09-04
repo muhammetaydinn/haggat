@@ -9,6 +9,7 @@ const SelectOrderBy = () => {
   return (
     <div className="justify-end flex pr-12">
       <Select
+        placeholder="Order by"
         data={[
           {
             value: "newest",
@@ -37,8 +38,10 @@ const SelectOrderBy = () => {
         ]}
         value={value ? value.value : null}
         onChange={(_value, option) => {
-          setValue(option);
-          setSortBy(option.value);
+          if (option) {
+            setValue(option);
+            setSortBy(option.value);
+          }
         }}
       />
     </div>
