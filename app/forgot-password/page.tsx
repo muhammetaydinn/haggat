@@ -40,14 +40,12 @@ export default function ForgotPassword() {
               </div>
             </div>
 
-           
-
             <div>
               <button
                 type="submit"
-                className="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                className="flex w-full justify-center rounded-md bg-black px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-gray-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
               >
-               Send me a reset link
+                Send me a reset link
               </button>
             </div>
           </form>
@@ -56,7 +54,7 @@ export default function ForgotPassword() {
             Remember your account?{" "}
             <a
               href="/login"
-              className="font-semibold leading-6 text-indigo-600 hover:text-indigo-500"
+              className="font-semibold leading-6 text-black hover:text-gray-800"
             >
               Login
             </a>

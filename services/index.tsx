@@ -3,7 +3,7 @@ import axios from "axios";
 import { formatImageJson } from "@/utils/imagesFormatter/imagesFormatter";
 //if you are use your local platzi api, you can change the value of isAPI to false
 const isAPI = true;
-const API_URL = isAPI
+export const API_URL = isAPI
   ? "https://api.escuelajs.co/api/v1"
   : "http://localhost:3001/api/v1";
 

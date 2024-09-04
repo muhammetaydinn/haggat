@@ -35,6 +35,11 @@ You can access the application at <http://localhost:3000>.
 
 - **Authentication**: Users can log in using NextAuth for session management.
 
+### Password Reset Integration
+
+- **Password Reset Feature**: The API does not support password reset operations. You will not be able to perform any actions related to resetting or recovering forgotten passwords through the API.
+- **Future Plans**: Password reset and security enhancements are planned for future releases. For updates on these features, please check the [project updates](#) page.
+
 ## Technological Specifications
 
 - **Frontend**:
