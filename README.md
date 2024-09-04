@@ -73,13 +73,6 @@ Or you can use the docker image to run it in a container.
     cd haggat
 ```
 
-2. **Install Dependencies**:
-
-```bash
-   git clone [repository-url]
-   cd haggat
-```
-
 3. Configure Environment Variables: Look at to the Create a .env.local file in the root directory and add the necessary environment variables. Refer to the .env.example for a template.
 4. Run the Development Server:
 
