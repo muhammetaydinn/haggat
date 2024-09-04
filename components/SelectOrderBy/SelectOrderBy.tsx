@@ -1,7 +1,9 @@
 import { ComboboxItem, Select } from "@mantine/core";
 import React, { useState } from "react";
+import { useSortStore } from "../ProductsContainer/ProductsContainer";
 
 const SelectOrderBy = () => {
+  const { sortBy, setSortBy } = useSortStore();
   //TODO: Implement select order by logic here
   const [value, setValue] = useState<ComboboxItem | null>(null);
   return (
@@ -11,6 +13,10 @@ const SelectOrderBy = () => {
           {
             value: "newest",
             label: "Newest",
+          },
+          {
+            value: "oldest",
+            label: "Oldest",
           },
           {
             value: "price-asc",
@@ -30,7 +36,10 @@ const SelectOrderBy = () => {
           },
         ]}
         value={value ? value.value : null}
-        onChange={(_value, option) => setValue(option)}
+        onChange={(_value, option) => {
+          setValue(option);
+          setSortBy(option.value);
+        }}
       />
     </div>
   );
